@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from 'react';
 
 const Player = ({
   activeSong,
@@ -31,8 +31,8 @@ const Player = ({
 
   return (
     <audio
-      // src={activeSong?.link}
-      src={activeSong?.hub?.actions[1]?.uri}
+      src={activeSong?.preview}
+      // src={activeSong?.hub?.actions[1]?.uri}
       // src="https://www.deezer.com/track/2169134027"
       ref={ref}
       loop={repeat}
