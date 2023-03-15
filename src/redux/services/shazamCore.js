@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // const options = {
 //   method: "GET",
@@ -14,20 +14,20 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 //   .catch((err) => console.error(err));
 
 export const shazamCoreApi = createApi({
-  reducerPath: "shazamCoreApi",
+  reducerPath: 'shazamCoreApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://deezerdevs-deezer.p.rapidapi.com",
+    baseUrl: 'https://deezerdevs-deezer.p.rapidapi.com',
     prepareHeaders: (headers) => {
       headers.set(
-        "X-RapidAPI-Key",
-        "4747c106b9mshd0f4f2e4552a229p1d9250jsn9bdbd4a53748"
+        'X-RapidAPI-Key',
+        '4747c106b9mshd0f4f2e4552a229p1d9250jsn9bdbd4a53748',
       );
       return headers;
     },
   }),
   endpoints: (builder) => ({
     getTopCharts: builder.query({
-      query: () => ({ url: "/search", params: { q: "trending" } }),
+      query: () => ({ url: '/search', params: { q: 'trending' } }),
     }),
   }),
 });

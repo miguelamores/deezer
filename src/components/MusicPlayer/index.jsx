@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import {
   nextSong,
   prevSong,
   playPause,
-} from "../../redux/features/playerSlice";
-import Controls from "./Controls";
-import Player from "./Player";
-import Seekbar from "./Seekbar";
-import Track from "./Track";
-import VolumeBar from "./VolumeBar";
+} from '../../redux/features/playerSlice';
+import Controls from './Controls';
+import Player from './Player';
+import Seekbar from './Seekbar';
+import Track from './Track';
+import VolumeBar from './VolumeBar';
 
 const MusicPlayer = () => {
-  const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
-    useSelector((state) => state.player);
+  const { activeSong, currentSongs, currentIndex, isActive, isPlaying } = useSelector((state) => state.player);
   const [duration, setDuration] = useState(0);
   const [seekTime, setSeekTime] = useState(0);
   const [appTime, setAppTime] = useState(0);
@@ -56,16 +55,16 @@ const MusicPlayer = () => {
       dispatch(prevSong(currentIndex - 1));
     }
   };
-  console.log(activeSong);
+  console.log({ activeSong });
 
   return (
-    <div className="relative sm:px-12 px-8 w-full flex items-center justify-between">
+    <div className='relative sm:px-12 px-8 w-full flex items-center justify-between'>
       <Track
         isPlaying={isPlaying}
         isActive={isActive}
         activeSong={activeSong}
       />
-      <div className="flex-1 flex flex-col items-center justify-center">
+      <div className='flex-1 flex flex-col items-center justify-center'>
         <Controls
           isPlaying={isPlaying}
           isActive={isActive}
@@ -80,7 +79,7 @@ const MusicPlayer = () => {
         />
         <Seekbar
           value={appTime}
-          min="0"
+          min='0'
           max={duration}
           onInput={(event) => setSeekTime(event.target.value)}
           setSeekTime={setSeekTime}
@@ -100,8 +99,8 @@ const MusicPlayer = () => {
       </div>
       <VolumeBar
         value={volume}
-        min="0"
-        max="1"
+        min='0'
+        max='1'
         onChange={(event) => setVolume(event.target.value)}
         setVolume={setVolume}
       />

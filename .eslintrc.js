@@ -16,6 +16,7 @@ module.exports = {
     'max-len': 0,
     'no-param-reassign': 0,
     'jsx-a11y/label-has-associated-control': 0,
+    'jsx-quotes': [2, 'prefer-single'],
     'react/function-component-definition': 0,
     'react/react-in-jsx-scope': 0,
     'import/extensions': 0,
